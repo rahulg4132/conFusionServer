@@ -4,7 +4,7 @@ var User = require('./models/user');
 var JwtStrategy = require('passport-jwt').Strategy;
 var ExtractJwt = require('passport-jwt').ExtractJwt;
 var jwt = require('jsonwebtoken');
-var FacebookTokenStrategy = require('passport-facebook-token');
+//var FacebookTokenStrategy = require('passport-facebook-token');
 
 var config = require('./config');
 const { NotExtended } = require('http-errors');
@@ -51,7 +51,7 @@ exports.jwtPassport = passport.use(new JwtStrategy(opts,
 
 exports.verifyUser = passport.authenticate('jwt', {session: false});
 
-exports.facebookPassport = passport.use(new FacebookTokenStrategy({
+/*exports.facebookPassport = passport.use(new FacebookTokenStrategy({
     clientID: config.facebook.clientId,
     clientSecret: config.facebook.clientSecret
 }, (accessToken, refreshToken, profile, done) => {
@@ -76,4 +76,4 @@ exports.facebookPassport = passport.use(new FacebookTokenStrategy({
         }
     });
 }
-));
+));*/
